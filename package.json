@@ -1,11 +1,11 @@
 {
-  "name": "web-calendar",
-  "version": "1.2.1",
+  "name": "opencloud-calendar",
+  "version": "1.3.0",
   "description": "CalDAV Calendar App for OpenCloud",
   "license": "Apache-2.0",
   "author": "OpenCloud",
   "private": true,
-  "homepage": "https://github.com/mschneider82/opencloud-web-calendar",
+  "homepage": "https://code.alvaroedo.io/alvaroemtnez/opencloud-calendar",
   "type": "module",
   "scripts": {
     "build": "pnpm vite build",

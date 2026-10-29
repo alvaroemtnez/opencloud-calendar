@@ -1,0 +1,18 @@
+# Checks every push and pull request: unit tests, type check and a build.
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: docker
+    container:
+      image: docker.io/library/node:24-bookworm
+    steps:
+      - uses: https://code.forgejo.org/actions/checkout@v4
+      - run: corepack enable && pnpm install --frozen-lockfile
+      - run: pnpm test:unit --run
+      - run: pnpm check:types
+      - run: pnpm build

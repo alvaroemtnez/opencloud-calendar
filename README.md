@@ -10,7 +10,7 @@ A CalDAV calendar application integrated as a native [OpenCloud](https://openclo
 - Month, week and day views
 - Create, edit and delete calendar events
 - Drag & drop event rescheduling
-- Multiple calendar support with color coding
+- Multiple calendar support with color coding (task lists and journals are left out)
 - All-day and timed events
 - Event conflict detection and resolution
 - Auto-save with optimistic updates
@@ -20,10 +20,10 @@ A CalDAV calendar application integrated as a native [OpenCloud](https://openclo
 
 ### 1. Copy the Extension Files
 
-Download the latest release archive from the [Releases](https://github.com/LordGuenni/opencloud-web-calendar/releases) page and extract it into your OpenCloud web assets directory:
+Download `opencloud-calendar-X.Y.Z.zip` from the [Releases](https://code.alvaroedo.io/alvaroemtnez/opencloud-calendar/releases) page (also on the [GitHub mirror](https://github.com/alvaroemtnez/opencloud-calendar/releases)) and extract it into your OpenCloud web apps directory. The zip holds a `web-calendar/` folder:
 
 ```bash
-unzip web-app-calendar.zip -d /var/lib/opencloud/web/assets/apps/web-calendar/
+unzip opencloud-calendar-X.Y.Z.zip -d /var/lib/opencloud/web/assets/apps/
 ```
 
 OpenCloud automatically discovers extensions placed in this directory.
@@ -150,6 +150,30 @@ The production build is output to the `dist/` directory.
 ```bash
 pnpm test:unit
 ```
+
+### Releasing
+
+A release is a tag. Pushing `vX.Y.Z` runs `.forgejo/workflows/release.yml`, which tests and builds the app and publishes the release, with `opencloud-calendar-X.Y.Z.zip` and `SHA256SUMS`, on Forgejo and on the GitHub mirror.
+
+1. Bump `version` in `package.json`.
+2. Add the `## X.Y.Z` entry to `CHANGELOG.md`: it is the release text, and the release fails without one.
+3. Commit, tag and push:
+   ```bash
+   git commit -am "Release X.Y.Z"
+   git tag -a vX.Y.Z -m "Calendar X.Y.Z"
+   git push && git push --tags
+   ```
+
+Repository secrets (*Settings → Actions → Secrets*), both optional:
+
+| Secret | Value |
+| --- | --- |
+| `RELEASE_TOKEN` | only if the automatic token cannot create releases: a Forgejo access token with *repository: read and write* |
+| `MIRROR_GITHUB_TOKEN` | a GitHub fine-grained token for `alvaroemtnez/opencloud-calendar` with *Contents: read and write*; without it the GitHub release is skipped |
+
+The job creates the GitHub release at the tagged commit itself, so it does not wait for the push mirror to sync. Don't create the release by hand as well: the job fails if it already exists.
+
+To build the zip locally: `pnpm build && tools/package.sh X.Y.Z release`.
 
 ## Architecture
 

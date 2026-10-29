@@ -29,6 +29,7 @@ export function buildPropfindCalendars(): string {
     <d:displayname/>
     <d:current-user-privilege-set/>
     <c:calendar-description/>
+    <c:supported-calendar-component-set/>
     <ic:calendar-color/>
     <cs:getctag/>
   </d:prop>
@@ -67,7 +68,10 @@ export function buildMkCalendar(displayName: string, description?: string, color
   <d:set>
     <d:prop>
       <d:displayname>${escapeXml(displayName)}</d:displayname>
-${descriptionProp}${colorProp}    </d:prop>
+${descriptionProp}${colorProp}      <c:supported-calendar-component-set>
+        <c:comp name="VEVENT"/>
+      </c:supported-calendar-component-set>
+    </d:prop>
   </d:set>
 </d:mkcalendar>`
 }
@@ -82,5 +86,8 @@ function escapeXml(str: string): string {
 }
 
 function formatDateTimeUTC(date: Date): string {
-  return date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '')
+  return date
+    .toISOString()
+    .replace(/[-:]/g, '')
+    .replace(/\.\d{3}/, '')
 }

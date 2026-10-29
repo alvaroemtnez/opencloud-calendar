@@ -74,6 +74,7 @@ export function parseCalendars(xml: string): CalendarData[] {
     let ctag: unknown
     let description: unknown
     let privileges: any
+    let components: string[] | undefined
     let foundCalendar = false
 
     for (const propstat of propstats) {
@@ -97,10 +98,17 @@ export function parseCalendars(xml: string): CalendarData[] {
       if (prop['calendar-color'] !== undefined) color = prop['calendar-color']
       if (prop['getctag'] !== undefined) ctag = prop['getctag']
       if (prop['calendar-description'] !== undefined) description = prop['calendar-description']
-      if (prop['current-user-privilege-set'] !== undefined) privileges = prop['current-user-privilege-set']
+      if (prop['current-user-privilege-set'] !== undefined)
+        privileges = prop['current-user-privilege-set']
+      if (prop['supported-calendar-component-set'] !== undefined) {
+        components = extractComponentNames(prop['supported-calendar-component-set'])
+      }
     }
 
     if (!foundCalendar) continue
+    // Task lists, journals and the like: only collections that hold events are calendars.
+    // Without the property the server accepts every component type (RFC 4791, 5.2.3).
+    if (components?.length && !components.includes('VEVENT')) continue
 
     let readOnly = false
     if (privileges && typeof privileges === 'object' && privileges.privilege) {
@@ -151,6 +159,15 @@ export function parseEvents(xml: string): EventData[] {
   }
 
   return events
+}
+
+function extractComponentNames(value: unknown): string[] {
+  const comps = (value as { comp?: unknown } | null)?.comp
+  const list = Array.isArray(comps) ? comps : comps ? [comps] : []
+  return list
+    .map((c) => (c as Record<string, unknown>)?.['@_name'])
+    .filter((name): name is string => typeof name === 'string')
+    .map((name) => name.toUpperCase())
 }
 
 function extractString(value: unknown): string | undefined {

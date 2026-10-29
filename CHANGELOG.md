@@ -1,18 +1,18 @@
 # Changelog
 
-## [1.1.0](https://github.com/opencloud-eu/web-app-skeleton/releases/tag/v1.1.0) - 2025-10-02
+Each `## X.Y.Z` entry is the text of that version's release. Versions up to
+1.2.1 were released by the upstream forks
+([LordGuenni](https://github.com/LordGuenni/opencloud-web-calendar),
+[mschneider82](https://github.com/mschneider82/opencloud-web-calendar)).
 
-### ✨ Features
+## 1.3.0
 
-- Migrate to Tailwind [[#94](https://github.com/opencloud-eu/web-app-skeleton/pull/94)]
-- Use manifest generator [[#94](https://github.com/opencloud-eu/web-app-skeleton/pull/94)]
-
-### 📦️ Dependencies
-
-- Update OpenCloud web ecosystem to v4 [[#84](https://github.com/opencloud-eu/web-app-skeleton/pull/84)]
-
-## [1.0.0](https://github.com/opencloud-eu/web-app-skeleton/releases/tag/v1.0.0) - 2025-02-27
-
-### ✨ Features
-
-- Create web-app-skeleton [[#22](https://github.com/opencloud-eu/web-app-skeleton/pull/22)]
+- The app is now called **Calendar** (it was "Web Calendar"). It still installs
+  into `apps/web-calendar/`, so existing installs and links keep working.
+- The sidebar only lists calendars: task lists, journals and other CalDAV
+  collections that cannot hold events are hidden.
+- New calendars are created for events only, so other CalDAV clients don't
+  offer them as task lists.
+- Releases are published on [Forgejo](https://code.alvaroedo.io/alvaroemtnez/opencloud-calendar/releases)
+  and on the [GitHub mirror](https://github.com/alvaroemtnez/opencloud-calendar/releases),
+  as `opencloud-calendar-X.Y.Z.zip` with a `SHA256SUMS` file.

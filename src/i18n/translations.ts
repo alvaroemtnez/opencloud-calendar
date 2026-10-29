@@ -3,9 +3,6 @@
 
 export const translations = {
   en: {
-    // App
-    'Web Calendar': 'Web Calendar',
-
     // Navigation
     Today: 'Today',
     Month: 'Month',
@@ -154,9 +151,6 @@ export const translations = {
       "Are you sure you want to delete '%{name}'? All events in this calendar will be permanently deleted."
   },
   de: {
-    // App
-    'Web Calendar': 'Web-Kalender',
-
     // Navigation
     Today: 'Heute',
     Month: 'Monat',

@@ -16,7 +16,7 @@ export default defineWebApplication({
 
     const appInfo = {
       id: 'web-calendar',
-      name: t('Web Calendar'),
+      name: t('Calendar'),
       icon: 'calendar',
       color: '#3788d8'
     }
@@ -28,7 +28,7 @@ export default defineWebApplication({
         component: () => import('./views/Calendar.vue'),
         meta: {
           authContext: 'user',
-          title: t('Web Calendar')
+          title: t('Calendar')
         }
       }
     ]

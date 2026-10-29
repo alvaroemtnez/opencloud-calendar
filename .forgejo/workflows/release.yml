@@ -1,0 +1,36 @@
+# Builds and publishes a release when a v* tag is pushed: the app zip (ready
+# to unzip into OpenCloud's apps directory) and SHA256SUMS, with the
+# CHANGELOG.md entry as the notes, on Forgejo and on the GitHub mirror.
+# Secrets: README.md, "Releasing".
+name: release
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  release:
+    runs-on: docker
+    container:
+      image: docker.io/library/node:24-bookworm
+    steps:
+      - uses: https://code.forgejo.org/actions/checkout@v4
+      - name: Tag matches the version
+        run: test "v$(node -p 'require("./package.json").version')" = "${GITHUB_REF_NAME}"
+      - name: Release notes exist
+        run: tools/release-notes.sh "${GITHUB_REF_NAME}"
+      - run: corepack enable && pnpm install --frozen-lockfile
+      - run: pnpm test:unit --run
+      - run: pnpm build
+      - name: Package
+        run: |
+          apt-get update -q && apt-get install -y -q --no-install-recommends zip
+          tools/package.sh "${GITHUB_REF_NAME#v}" release
+      - name: Publish
+        env:
+          FORGEJO_URL: ${{ github.server_url }}
+          FORGEJO_REPO: ${{ github.repository }}
+          FORGEJO_TOKEN: ${{ secrets.RELEASE_TOKEN || github.token }}
+          GITHUB_REPO: alvaroemtnez/opencloud-calendar
+          GITHUB_TOKEN: ${{ secrets.MIRROR_GITHUB_TOKEN }}
+          TARGET_SHA: ${{ github.sha }}
+        run: tools/publish-release.sh "${GITHUB_REF_NAME}" release
