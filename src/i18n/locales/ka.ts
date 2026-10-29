@@ -1,0 +1,167 @@
+import type { Messages } from './en'
+
+const ka: Messages = {
+  // Navigation
+  Today: 'დღეს',
+  Month: 'თვე',
+  Week: 'კვირა',
+  Day: 'დღე',
+
+  // Sidebar
+  Calendars: 'კალენდრები',
+  'Create new calendar': 'ახალი კალენდრის შექმნა',
+  'Loading calendars...': 'კალენდრები იტვირთება...',
+  'No calendars found': 'კალენდრები ვერ მოიძებნა',
+  'Delete calendar': 'კალენდრის წაშლა',
+  'Share calendar': 'კალენდრის გაზიარება',
+  'Pending Invitations': 'მოლოდინში მყოფი მოწვევები',
+  'From:': 'ვისგან:',
+  Accept: 'მიღება',
+  Decline: 'უარყოფა',
+
+  // Event Dialog
+  'Edit Event': 'მოვლენის რედაქტირება',
+  'New Event': 'ახალი მოვლენა',
+  Title: 'სათაური',
+  Calendar: 'კალენდარი',
+  'All day event': 'მთელი დღე',
+  'Start Date': 'დაწყების თარიღი',
+  'Start Time': 'დაწყების დრო',
+  'End Date': 'დასრულების თარიღი',
+  'End Time': 'დასრულების დრო',
+  Location: 'მდებარეობა',
+  Description: 'აღწერა',
+  'Event title': 'მოვლენის სათაური',
+  'Add location': 'მდებარეობის დამატება',
+  'Add description': 'აღწერის დამატება',
+  Delete: 'წაშლა',
+  Cancel: 'გაუქმება',
+  'Saving...': 'ინახება...',
+  Save: 'შენახვა',
+
+  // Conflict Resolution
+  'This event was modified by another client. Choose how to resolve:':
+    'ეს მოვლენა სხვა კლიენტმა შეცვალა. აირჩიეთ, როგორ გადაწყდეს კონფლიქტი:',
+  'Keep my changes': 'ჩემი ცვლილებების შენარჩუნება',
+  'Use server version': 'სერვერის ვერსიის გამოყენება',
+
+  // Calendar Dialog
+  'New Calendar': 'ახალი კალენდარი',
+  'Calendar Name': 'კალენდრის სახელი',
+  'Description (optional)': 'აღწერა (არასავალდებულო)',
+  Color: 'ფერი',
+  'Calendar description': 'კალენდრის აღწერა',
+  'My Calendar': 'ჩემი კალენდარი',
+  'Creating...': 'იქმნება...',
+  Create: 'შექმნა',
+
+  // Recurrence
+  'Edit Recurring Event': 'განმეორებადი მოვლენის რედაქტირება',
+  'This is a recurring event. What would you like to edit?':
+    'ეს განმეორებადი მოვლენაა. რისი რედაქტირება გსურთ?',
+  'This event only': 'მხოლოდ ეს მოვლენა',
+  'All events in series': 'სერიის ყველა მოვლენა',
+  'this occurrence': 'ეს განმეორება',
+  'entire series': 'მთელი სერია',
+  Repeat: 'გამეორება',
+  Every: 'ყოველ',
+  'day(s)': 'დღეში',
+  'week(s)': 'კვირაში',
+  'month(s)': 'თვეში',
+  'year(s)': 'წელიწადში',
+  Mon: 'ორშ',
+  Tue: 'სამ',
+  Wed: 'ოთხ',
+  Thu: 'ხუთ',
+  Fri: 'პარ',
+  Sat: 'შაბ',
+  Sun: 'კვ',
+  Ends: 'სრულდება',
+  Never: 'არასდროს',
+  After: 'შემდეგ',
+  occurrences: 'განმეორების',
+  On: 'თარიღზე',
+  'Delete this event': 'ამ მოვლენის წაშლა',
+  'Export .ics': '.ics-ად ექსპორტი',
+  'Download this occurrence as .ics': 'ამ განმეორების ჩამოტვირთვა .ics-ად',
+  'Download as .ics': 'ჩამოტვირთვა .ics-ად',
+
+  // ICS Import
+  'Import Calendar': 'კალენდრის იმპორტი',
+  'Import calendar': 'კალენდრის იმპორტი',
+  'ICS File': 'ICS ფაილი',
+  'Import mode': 'იმპორტის რეჟიმი',
+  'Merge into existing calendar': 'არსებულ კალენდართან გაერთიანება',
+  'Target calendar': 'სამიზნე კალენდარი',
+  'Select calendar': 'აირჩიეთ კალენდარი',
+  'Enter calendar name': 'შეიყვანეთ კალენდრის სახელი',
+  Import: 'იმპორტი',
+  Close: 'დახურვა',
+  'Reading file...': 'ფაილი იკითხება...',
+  'Parsing events...': 'მოვლენები მუშავდება...',
+  'Analyzing for duplicates...': 'დუბლიკატები მოწმდება...',
+  'Importing events...': 'მოვლენები იმპორტდება...',
+  Created: 'შექმნილი',
+  Updated: 'განახლებული',
+  Skipped: 'გამოტოვებული',
+  Failed: 'წარუმატებელი',
+  'Imported %{count} events into "%{name}"': '„%{name}“-ში იმპორტირებულია %{count} მოვლენა',
+  'Parse warnings': 'წაკითხვის გაფრთხილებები',
+  'Show details': 'დეტალების ჩვენება',
+  'Hide details': 'დეტალების დამალვა',
+
+  // Sharing
+  'Share calendar: %{name}': 'კალენდრის გაზიარება: %{name}',
+  'Share with users': 'მომხმარებლებთან გაზიარება',
+  'User ID or Email': 'მომხმარებლის ID ან ელფოსტა',
+  Read: 'წაკითხვა',
+  'Read & Write': 'წაკითხვა და ჩაწერა',
+  Invite: 'მოწვევა',
+  'Read only': 'მხოლოდ წაკითხვა',
+  'Public links': 'საჯარო და მოსაწვევი ბმულები',
+  'Invite & Public links': 'საჯარო და მოსაწვევი ბმულები',
+  'Create link': 'ბმულის შექმნა',
+  'Create invite link': 'მოსაწვევი ბმულის შექმნა',
+  'Read only link': 'მხოლოდ წასაკითხი ბმული',
+  'Read & Write link': 'წაკითხვის და ჩაწერის ბმული',
+  'Web Invite Link': 'ვებ-მოსაწვევი ბმული',
+  'CalDAV Link': 'CalDAV ბმული',
+  'Copy Web Invite': 'ვებ-მოსაწვევის კოპირება',
+  'Copy CalDAV URL': 'CalDAV URL-ის კოპირება',
+  'Copied!': 'დაკოპირდა!',
+  Copy: 'კოპირება',
+  'No public links created yet': 'საჯარო ბმულები ჯერ არ შექმნილა',
+  'Revoke link': 'ბმულის გაუქმება',
+  'Shared via link': 'გაზიარებულია ბმულით',
+  'Join Shared Calendar': 'გაზიარებულ კალენდარში შეერთება',
+  'You have been invited to join the calendar "%{name}".': 'თქვენ მოგიწვიეს კალენდარში „%{name}“.',
+  'Permission: %{perm}': 'უფლება: %{perm}',
+  'Join Calendar': 'კალენდარში შეერთება',
+  'You are already subscribed to this calendar.': 'თქვენ უკვე გამოწერილი გაქვთ ეს კალენდარი.',
+  'Joined calendar successfully': 'კალენდარს წარმატებით შეუერთდით',
+  'Leave calendar': 'კალენდრის დატოვება',
+
+  // Confirm Dialog
+  Confirm: 'დადასტურება',
+
+  // Delete Calendar Confirmation
+  'Delete Calendar': 'კალენდრის წაშლა',
+  "Are you sure you want to delete '%{name}'? All events in this calendar will be permanently deleted.":
+    'ნამდვილად გსურთ „%{name}“-ის წაშლა? ამ კალენდრის ყველა მოვლენა სამუდამოდ წაიშლება.',
+
+  // Shared calendars
+  Refresh: 'განახლება',
+  'Toggle sidebar': 'გვერდითი პანელის ჩვენება/დამალვა',
+  'Shared by:': 'გააზიარა:',
+  'Shared Calendar': 'გაზიარებული კალენდარი',
+  Accepted: 'მიღებულია',
+  Invited: 'მოწვეულია',
+  Left: 'დატოვა',
+  'Remove share': 'გაზიარების მოხსნა',
+  Leave: 'დატოვება',
+  'Leave Calendar': 'კალენდრის დატოვება',
+  "Are you sure you want to leave '%{name}'? You will no longer have access to this calendar.":
+    'ნამდვილად გსურთ „%{name}“-ის დატოვება? ამ კალენდარზე წვდომა აღარ გექნებათ.'
+}
+
+export default ka

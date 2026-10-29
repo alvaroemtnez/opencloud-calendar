@@ -1,0 +1,167 @@
+import type { Messages } from './en'
+
+const sr: Messages = {
+  // Navigation
+  Today: 'Данас',
+  Month: 'Месец',
+  Week: 'Недеља',
+  Day: 'Дан',
+
+  // Sidebar
+  Calendars: 'Календари',
+  'Create new calendar': 'Направи нови календар',
+  'Loading calendars...': 'Учитавање календара...',
+  'No calendars found': 'Није пронађен ниједан календар',
+  'Delete calendar': 'Обриши календар',
+  'Share calendar': 'Подели календар',
+  'Pending Invitations': 'Позивнице на чекању',
+  'From:': 'Од:',
+  Accept: 'Прихвати',
+  Decline: 'Одбиј',
+
+  // Event Dialog
+  'Edit Event': 'Уреди догађај',
+  'New Event': 'Нови догађај',
+  Title: 'Наслов',
+  Calendar: 'Календар',
+  'All day event': 'Цео дан',
+  'Start Date': 'Датум почетка',
+  'Start Time': 'Време почетка',
+  'End Date': 'Датум завршетка',
+  'End Time': 'Време завршетка',
+  Location: 'Локација',
+  Description: 'Опис',
+  'Event title': 'Наслов догађаја',
+  'Add location': 'Додај локацију',
+  'Add description': 'Додај опис',
+  Delete: 'Обриши',
+  Cancel: 'Откажи',
+  'Saving...': 'Чување...',
+  Save: 'Сачувај',
+
+  // Conflict Resolution
+  'This event was modified by another client. Choose how to resolve:':
+    'Овај догађај је изменио други клијент. Изаберите како да решите сукоб:',
+  'Keep my changes': 'Задржи моје измене',
+  'Use server version': 'Користи верзију са сервера',
+
+  // Calendar Dialog
+  'New Calendar': 'Нови календар',
+  'Calendar Name': 'Назив календара',
+  'Description (optional)': 'Опис (необавезно)',
+  Color: 'Боја',
+  'Calendar description': 'Опис календара',
+  'My Calendar': 'Мој календар',
+  'Creating...': 'Прављење...',
+  Create: 'Направи',
+
+  // Recurrence
+  'Edit Recurring Event': 'Уреди понављајући догађај',
+  'This is a recurring event. What would you like to edit?':
+    'Ово је понављајући догађај. Шта желите да уредите?',
+  'This event only': 'Само овај догађај',
+  'All events in series': 'Све догађаје у низу',
+  'this occurrence': 'ово понављање',
+  'entire series': 'цео низ',
+  Repeat: 'Понављај',
+  Every: 'Сваких',
+  'day(s)': 'дан(а)',
+  'week(s)': 'недеља/е',
+  'month(s)': 'месец(и)',
+  'year(s)': 'година/е',
+  Mon: 'пон',
+  Tue: 'уто',
+  Wed: 'сре',
+  Thu: 'чет',
+  Fri: 'пет',
+  Sat: 'суб',
+  Sun: 'нед',
+  Ends: 'Завршава се',
+  Never: 'Никад',
+  After: 'После',
+  occurrences: 'понављања',
+  On: 'Дана',
+  'Delete this event': 'Обриши овај догађај',
+  'Export .ics': 'Извези .ics',
+  'Download this occurrence as .ics': 'Преузми ово понављање као .ics',
+  'Download as .ics': 'Преузми као .ics',
+
+  // ICS Import
+  'Import Calendar': 'Увези календар',
+  'Import calendar': 'Увези календар',
+  'ICS File': 'ICS датотека',
+  'Import mode': 'Режим увоза',
+  'Merge into existing calendar': 'Споји са постојећим календаром',
+  'Target calendar': 'Одредишни календар',
+  'Select calendar': 'Изабери календар',
+  'Enter calendar name': 'Унесите назив календара',
+  Import: 'Увези',
+  Close: 'Затвори',
+  'Reading file...': 'Читање датотеке...',
+  'Parsing events...': 'Обрада догађаја...',
+  'Analyzing for duplicates...': 'Тражење дупликата...',
+  'Importing events...': 'Увоз догађаја...',
+  Created: 'Направљено',
+  Updated: 'Ажурирано',
+  Skipped: 'Прескочено',
+  Failed: 'Неуспешно',
+  'Imported %{count} events into "%{name}"': 'У „%{name}“ увезено догађаја: %{count}',
+  'Parse warnings': 'Упозорења при читању',
+  'Show details': 'Прикажи детаље',
+  'Hide details': 'Сакриј детаље',
+
+  // Sharing
+  'Share calendar: %{name}': 'Подели календар: %{name}',
+  'Share with users': 'Подели са корисницима',
+  'User ID or Email': 'ИД корисника или е-пошта',
+  Read: 'Читање',
+  'Read & Write': 'Читање и писање',
+  Invite: 'Позови',
+  'Read only': 'Само за читање',
+  'Public links': 'Јавне везе и позивнице',
+  'Invite & Public links': 'Јавне везе и позивнице',
+  'Create link': 'Направи везу',
+  'Create invite link': 'Направи везу за позив',
+  'Read only link': 'Веза само за читање',
+  'Read & Write link': 'Веза за читање и писање',
+  'Web Invite Link': 'Веб веза за позив',
+  'CalDAV Link': 'CalDAV веза',
+  'Copy Web Invite': 'Копирај веб позивницу',
+  'Copy CalDAV URL': 'Копирај CalDAV URL',
+  'Copied!': 'Копирано!',
+  Copy: 'Копирај',
+  'No public links created yet': 'Још нема јавних веза',
+  'Revoke link': 'Опозови везу',
+  'Shared via link': 'Подељено путем везе',
+  'Join Shared Calendar': 'Придружи се дељеном календару',
+  'You have been invited to join the calendar "%{name}".': 'Позвани сте у календар „%{name}“.',
+  'Permission: %{perm}': 'Дозвола: %{perm}',
+  'Join Calendar': 'Придружи се календару',
+  'You are already subscribed to this calendar.': 'Већ сте претплаћени на овај календар.',
+  'Joined calendar successfully': 'Придружили сте се календару',
+  'Leave calendar': 'Напусти календар',
+
+  // Confirm Dialog
+  Confirm: 'Потврди',
+
+  // Delete Calendar Confirmation
+  'Delete Calendar': 'Обриши календар',
+  "Are you sure you want to delete '%{name}'? All events in this calendar will be permanently deleted.":
+    'Да ли заиста желите да обришете „%{name}“? Сви догађаји у овом календару биће трајно обрисани.',
+
+  // Shared calendars
+  Refresh: 'Освежи',
+  'Toggle sidebar': 'Прикажи/сакриј бочну траку',
+  'Shared by:': 'Дели:',
+  'Shared Calendar': 'Дељени календар',
+  Accepted: 'Прихваћено',
+  Invited: 'Позван',
+  Left: 'Напустио',
+  'Remove share': 'Уклони дељење',
+  Leave: 'Напусти',
+  'Leave Calendar': 'Напусти календар',
+  "Are you sure you want to leave '%{name}'? You will no longer have access to this calendar.":
+    'Да ли заиста желите да напустите „%{name}“? Више нећете имати приступ овом календару.'
+}
+
+export default sr

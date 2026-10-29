@@ -14,7 +14,7 @@ A CalDAV calendar application integrated as a native [OpenCloud](https://openclo
 - All-day and timed events
 - Event conflict detection and resolution
 - Auto-save with optimistic updates
-- Multi-language support (English, German) with automatic detection from user profile
+- Available in all 48 languages OpenCloud supports, following the language in the user's profile
 
 ## Installation
 

@@ -7,7 +7,8 @@ import interactionPlugin from '@fullcalendar/interaction'
 import type { CalendarOptions, EventInput, EventClickArg, DateSelectArg, EventDropArg, DatesSetArg } from '@fullcalendar/core'
 import type { EventResizeDoneArg } from '@fullcalendar/interaction'
 import type { CalendarEvent, Calendar } from '../types/calendar'
-import { getFullCalendarLocale } from '../composables/useLanguage'
+import { getLanguage } from '../composables/useLanguage'
+import { fullCalendarLocales } from '../i18n/fullcalendar'
 
 const props = defineProps<{
   events: CalendarEvent[]
@@ -62,7 +63,7 @@ const calendarOptions = computed<CalendarOptions>(() => ({
   initialView: props.viewType,
   initialDate: props.currentDate,
   headerToolbar: false,
-  locale: getFullCalendarLocale(),
+  locale: fullCalendarLocales[getLanguage()],
   events: fullCalendarEvents.value,
   editable: true,
   selectable: true,

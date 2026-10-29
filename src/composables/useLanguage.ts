@@ -1,14 +1,35 @@
 import { computed } from 'vue'
 import { useUserStore } from '@opencloud-eu/web-pkg'
 import {
-  translations,
+  en,
+  loadMessages,
   supportedLanguages,
   defaultLanguage,
+  type Messages,
   type SupportedLanguage
 } from '../i18n/translations'
+import { appNames } from '../i18n/app-names'
 
 // Singleton state for language
 let currentLanguage: SupportedLanguage = defaultLanguage
+
+// Strings of the languages loaded so far; t() falls back to English until loadLanguage() is done
+const messages: Partial<Record<SupportedLanguage, Messages>> = { en }
+
+// Browsers report Norwegian Bokmål as nb; OpenCloud calls it no.
+const aliases: Record<string, SupportedLanguage> = { nb: 'no' }
+
+/**
+ * Matches a language tag (de, de-AT, pt_BR, zh-Hans-CN) to a supported language by its
+ * base language.
+ */
+function matchLanguage(tag: string): SupportedLanguage | undefined {
+  const base = tag.split(/[-_]/)[0].toLowerCase()
+  if (aliases[base]) return aliases[base]
+  return supportedLanguages.includes(base as SupportedLanguage)
+    ? (base as SupportedLanguage)
+    : undefined
+}
 
 /**
  * Detects the user's preferred language from multiple sources:
@@ -18,21 +39,13 @@ let currentLanguage: SupportedLanguage = defaultLanguage
  */
 function detectLanguage(userPreferredLanguage?: string): SupportedLanguage {
   // 1. Check OpenCloud user profile language
-  if (userPreferredLanguage) {
-    const shortLang = userPreferredLanguage.split('-')[0].toLowerCase()
-    if (supportedLanguages.includes(shortLang as SupportedLanguage)) {
-      return shortLang as SupportedLanguage
-    }
-  }
+  const fromProfile = userPreferredLanguage && matchLanguage(userPreferredLanguage)
+  if (fromProfile) return fromProfile
 
   // 2. Check browser language
   const browserLang = navigator.language || (navigator as any).userLanguage || ''
-  if (browserLang) {
-    const shortLang = browserLang.split('-')[0].toLowerCase()
-    if (supportedLanguages.includes(shortLang as SupportedLanguage)) {
-      return shortLang as SupportedLanguage
-    }
-  }
+  const fromBrowser = browserLang && matchLanguage(browserLang)
+  if (fromBrowser) return fromBrowser
 
   // 3. Default to English
   return defaultLanguage
@@ -54,6 +67,23 @@ export function initLanguage(): SupportedLanguage {
 }
 
 /**
+ * Detect the language and load its strings. Await before rendering translated views.
+ */
+export async function loadLanguage(): Promise<void> {
+  const lang = initLanguage()
+  if (!messages[lang]) {
+    messages[lang] = await loadMessages(lang)
+  }
+}
+
+/**
+ * The app's name in the current language (available before loadLanguage())
+ */
+export function appName(): string {
+  return appNames[currentLanguage]
+}
+
+/**
  * Get current language
  */
 export function getLanguage(): SupportedLanguage {
@@ -64,7 +94,7 @@ export function getLanguage(): SupportedLanguage {
  * Translate a string to the current language
  */
 export function t(key: string, params?: Record<string, string>): string {
-  const langStrings = translations[currentLanguage] || translations[defaultLanguage]
+  const langStrings = messages[currentLanguage] || en
   let translated = (langStrings as Record<string, string>)[key] || key
 
   // Replace parameters like %{name}
@@ -98,11 +128,4 @@ export function useLanguage() {
     t,
     updateLanguage
   }
-}
-
-/**
- * Get FullCalendar locale string
- */
-export function getFullCalendarLocale(): string {
-  return currentLanguage
 }

@@ -1,13 +1,9 @@
-import {
-  defineWebApplication,
-  Extension,
-  AppMenuItemExtension
-} from '@opencloud-eu/web-pkg'
+import { defineWebApplication, Extension, AppMenuItemExtension } from '@opencloud-eu/web-pkg'
 import { urlJoin } from '@opencloud-eu/web-client'
 import '@opencloud-eu/extension-sdk/tailwind.css'
 import { RouteRecordRaw } from 'vue-router'
 import { computed } from 'vue'
-import { initLanguage, t } from './composables/useLanguage'
+import { appName, initLanguage, loadLanguage } from './composables/useLanguage'
 
 export default defineWebApplication({
   setup() {
@@ -16,7 +12,7 @@ export default defineWebApplication({
 
     const appInfo = {
       id: 'web-calendar',
-      name: t('Calendar'),
+      name: appName(),
       icon: 'calendar',
       color: '#3788d8'
     }
@@ -25,10 +21,13 @@ export default defineWebApplication({
       {
         path: '/',
         name: 'web-calendar',
-        component: () => import('./views/Calendar.vue'),
+        component: async () => {
+          const [view] = await Promise.all([import('./views/Calendar.vue'), loadLanguage()])
+          return view
+        },
         meta: {
           authContext: 'user',
-          title: t('Calendar')
+          title: appName()
         }
       }
     ]

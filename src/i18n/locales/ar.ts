@@ -1,0 +1,167 @@
+import type { Messages } from './en'
+
+const ar: Messages = {
+  // Navigation
+  Today: 'اليوم',
+  Month: 'شهر',
+  Week: 'أسبوع',
+  Day: 'يوم',
+
+  // Sidebar
+  Calendars: 'التقويمات',
+  'Create new calendar': 'إنشاء تقويم جديد',
+  'Loading calendars...': 'جارٍ تحميل التقويمات...',
+  'No calendars found': 'لم يتم العثور على تقويمات',
+  'Delete calendar': 'حذف التقويم',
+  'Share calendar': 'مشاركة التقويم',
+  'Pending Invitations': 'دعوات معلقة',
+  'From:': 'من:',
+  Accept: 'قبول',
+  Decline: 'رفض',
+
+  // Event Dialog
+  'Edit Event': 'تعديل الحدث',
+  'New Event': 'حدث جديد',
+  Title: 'العنوان',
+  Calendar: 'التقويم',
+  'All day event': 'طوال اليوم',
+  'Start Date': 'تاريخ البدء',
+  'Start Time': 'وقت البدء',
+  'End Date': 'تاريخ الانتهاء',
+  'End Time': 'وقت الانتهاء',
+  Location: 'الموقع',
+  Description: 'الوصف',
+  'Event title': 'عنوان الحدث',
+  'Add location': 'إضافة موقع',
+  'Add description': 'إضافة وصف',
+  Delete: 'حذف',
+  Cancel: 'إلغاء',
+  'Saving...': 'جارٍ الحفظ...',
+  Save: 'حفظ',
+
+  // Conflict Resolution
+  'This event was modified by another client. Choose how to resolve:':
+    'عدّل عميل آخر هذا الحدث. اختر طريقة حل التعارض:',
+  'Keep my changes': 'الاحتفاظ بتغييراتي',
+  'Use server version': 'استخدام نسخة الخادم',
+
+  // Calendar Dialog
+  'New Calendar': 'تقويم جديد',
+  'Calendar Name': 'اسم التقويم',
+  'Description (optional)': 'الوصف (اختياري)',
+  Color: 'اللون',
+  'Calendar description': 'وصف التقويم',
+  'My Calendar': 'تقويمي',
+  'Creating...': 'جارٍ الإنشاء...',
+  Create: 'إنشاء',
+
+  // Recurrence
+  'Edit Recurring Event': 'تعديل حدث متكرر',
+  'This is a recurring event. What would you like to edit?': 'هذا حدث متكرر. ما الذي تريد تعديله؟',
+  'This event only': 'هذا الحدث فقط',
+  'All events in series': 'كل أحداث السلسلة',
+  'this occurrence': 'هذا التكرار',
+  'entire series': 'السلسلة كاملة',
+  Repeat: 'تكرار',
+  Every: 'كل',
+  'day(s)': 'يوم/أيام',
+  'week(s)': 'أسبوع/أسابيع',
+  'month(s)': 'شهر/أشهر',
+  'year(s)': 'سنة/سنوات',
+  Mon: 'إثن',
+  Tue: 'ثلا',
+  Wed: 'أرب',
+  Thu: 'خمي',
+  Fri: 'جمع',
+  Sat: 'سبت',
+  Sun: 'أحد',
+  Ends: 'ينتهي',
+  Never: 'أبدًا',
+  After: 'بعد',
+  occurrences: 'مرات',
+  On: 'في',
+  'Delete this event': 'حذف هذا الحدث',
+  'Export .ics': 'تصدير .ics',
+  'Download this occurrence as .ics': 'تنزيل هذا التكرار بصيغة .ics',
+  'Download as .ics': 'تنزيل بصيغة .ics',
+
+  // ICS Import
+  'Import Calendar': 'استيراد تقويم',
+  'Import calendar': 'استيراد تقويم',
+  'ICS File': 'ملف ICS',
+  'Import mode': 'وضع الاستيراد',
+  'Merge into existing calendar': 'الدمج في تقويم موجود',
+  'Target calendar': 'التقويم الهدف',
+  'Select calendar': 'اختر التقويم',
+  'Enter calendar name': 'أدخل اسم التقويم',
+  Import: 'استيراد',
+  Close: 'إغلاق',
+  'Reading file...': 'جارٍ قراءة الملف...',
+  'Parsing events...': 'جارٍ تحليل الأحداث...',
+  'Analyzing for duplicates...': 'جارٍ البحث عن التكرارات...',
+  'Importing events...': 'جارٍ استيراد الأحداث...',
+  Created: 'تم الإنشاء',
+  Updated: 'تم التحديث',
+  Skipped: 'تم التخطي',
+  Failed: 'فشل',
+  'Imported %{count} events into "%{name}"': 'تم استيراد %{count} حدثًا إلى «%{name}»',
+  'Parse warnings': 'تحذيرات القراءة',
+  'Show details': 'إظهار التفاصيل',
+  'Hide details': 'إخفاء التفاصيل',
+
+  // Sharing
+  'Share calendar: %{name}': 'مشاركة التقويم: %{name}',
+  'Share with users': 'المشاركة مع المستخدمين',
+  'User ID or Email': 'معرّف المستخدم أو البريد الإلكتروني',
+  Read: 'قراءة',
+  'Read & Write': 'قراءة وكتابة',
+  Invite: 'دعوة',
+  'Read only': 'للقراءة فقط',
+  'Public links': 'روابط عامة وروابط دعوة',
+  'Invite & Public links': 'روابط عامة وروابط دعوة',
+  'Create link': 'إنشاء رابط',
+  'Create invite link': 'إنشاء رابط دعوة',
+  'Read only link': 'رابط للقراءة فقط',
+  'Read & Write link': 'رابط للقراءة والكتابة',
+  'Web Invite Link': 'رابط دعوة عبر الويب',
+  'CalDAV Link': 'رابط CalDAV',
+  'Copy Web Invite': 'نسخ دعوة الويب',
+  'Copy CalDAV URL': 'نسخ عنوان CalDAV',
+  'Copied!': 'تم النسخ!',
+  Copy: 'نسخ',
+  'No public links created yet': 'لم يتم إنشاء روابط عامة بعد',
+  'Revoke link': 'إبطال الرابط',
+  'Shared via link': 'تمت المشاركة عبر رابط',
+  'Join Shared Calendar': 'الانضمام إلى تقويم مشترك',
+  'You have been invited to join the calendar "%{name}".':
+    'تمت دعوتك للانضمام إلى التقويم «%{name}».',
+  'Permission: %{perm}': 'الصلاحية: %{perm}',
+  'Join Calendar': 'الانضمام إلى التقويم',
+  'You are already subscribed to this calendar.': 'أنت مشترك بالفعل في هذا التقويم.',
+  'Joined calendar successfully': 'تم الانضمام إلى التقويم بنجاح',
+  'Leave calendar': 'مغادرة التقويم',
+
+  // Confirm Dialog
+  Confirm: 'تأكيد',
+
+  // Delete Calendar Confirmation
+  'Delete Calendar': 'حذف التقويم',
+  "Are you sure you want to delete '%{name}'? All events in this calendar will be permanently deleted.":
+    'هل تريد بالتأكيد حذف «%{name}»؟ سيتم حذف جميع الأحداث في هذا التقويم نهائيًا.',
+
+  // Shared calendars
+  Refresh: 'تحديث',
+  'Toggle sidebar': 'إظهار/إخفاء الشريط الجانبي',
+  'Shared by:': 'تمت المشاركة بواسطة:',
+  'Shared Calendar': 'تقويم مشترك',
+  Accepted: 'مقبولة',
+  Invited: 'تمت دعوته',
+  Left: 'غادر',
+  'Remove share': 'إزالة المشاركة',
+  Leave: 'مغادرة',
+  'Leave Calendar': 'مغادرة التقويم',
+  "Are you sure you want to leave '%{name}'? You will no longer have access to this calendar.":
+    'هل تريد بالتأكيد مغادرة «%{name}»؟ لن تتمكن من الوصول إلى هذا التقويم بعد الآن.'
+}
+
+export default ar

@@ -1,0 +1,167 @@
+import type { Messages } from './en'
+
+const ko: Messages = {
+  // Navigation
+  Today: '오늘',
+  Month: '월',
+  Week: '주',
+  Day: '일',
+
+  // Sidebar
+  Calendars: '캘린더',
+  'Create new calendar': '새 캘린더 만들기',
+  'Loading calendars...': '캘린더를 불러오는 중...',
+  'No calendars found': '캘린더가 없습니다',
+  'Delete calendar': '캘린더 삭제',
+  'Share calendar': '캘린더 공유',
+  'Pending Invitations': '대기 중인 초대',
+  'From:': '보낸 사람:',
+  Accept: '수락',
+  Decline: '거절',
+
+  // Event Dialog
+  'Edit Event': '일정 편집',
+  'New Event': '새 일정',
+  Title: '제목',
+  Calendar: '캘린더',
+  'All day event': '종일',
+  'Start Date': '시작 날짜',
+  'Start Time': '시작 시간',
+  'End Date': '종료 날짜',
+  'End Time': '종료 시간',
+  Location: '장소',
+  Description: '설명',
+  'Event title': '일정 제목',
+  'Add location': '장소 추가',
+  'Add description': '설명 추가',
+  Delete: '삭제',
+  Cancel: '취소',
+  'Saving...': '저장 중...',
+  Save: '저장',
+
+  // Conflict Resolution
+  'This event was modified by another client. Choose how to resolve:':
+    '다른 클라이언트에서 이 일정을 수정했습니다. 해결 방법을 선택하세요:',
+  'Keep my changes': '내 변경 사항 유지',
+  'Use server version': '서버 버전 사용',
+
+  // Calendar Dialog
+  'New Calendar': '새 캘린더',
+  'Calendar Name': '캘린더 이름',
+  'Description (optional)': '설명(선택 사항)',
+  Color: '색상',
+  'Calendar description': '캘린더 설명',
+  'My Calendar': '내 캘린더',
+  'Creating...': '만드는 중...',
+  Create: '만들기',
+
+  // Recurrence
+  'Edit Recurring Event': '반복 일정 편집',
+  'This is a recurring event. What would you like to edit?':
+    '반복 일정입니다. 무엇을 편집하시겠습니까?',
+  'This event only': '이 일정만',
+  'All events in series': '시리즈의 모든 일정',
+  'this occurrence': '이 일정만',
+  'entire series': '전체 시리즈',
+  Repeat: '반복',
+  Every: '간격',
+  'day(s)': '일마다',
+  'week(s)': '주마다',
+  'month(s)': '개월마다',
+  'year(s)': '년마다',
+  Mon: '월',
+  Tue: '화',
+  Wed: '수',
+  Thu: '목',
+  Fri: '금',
+  Sat: '토',
+  Sun: '일',
+  Ends: '종료',
+  Never: '없음',
+  After: '횟수',
+  occurrences: '회 후',
+  On: '날짜',
+  'Delete this event': '이 일정 삭제',
+  'Export .ics': '.ics 내보내기',
+  'Download this occurrence as .ics': '이 일정을 .ics로 다운로드',
+  'Download as .ics': '.ics로 다운로드',
+
+  // ICS Import
+  'Import Calendar': '캘린더 가져오기',
+  'Import calendar': '캘린더 가져오기',
+  'ICS File': 'ICS 파일',
+  'Import mode': '가져오기 방식',
+  'Merge into existing calendar': '기존 캘린더에 병합',
+  'Target calendar': '대상 캘린더',
+  'Select calendar': '캘린더 선택',
+  'Enter calendar name': '캘린더 이름 입력',
+  Import: '가져오기',
+  Close: '닫기',
+  'Reading file...': '파일을 읽는 중...',
+  'Parsing events...': '일정을 분석하는 중...',
+  'Analyzing for duplicates...': '중복 항목을 확인하는 중...',
+  'Importing events...': '일정을 가져오는 중...',
+  Created: '생성됨',
+  Updated: '업데이트됨',
+  Skipped: '건너뜀',
+  Failed: '실패',
+  'Imported %{count} events into "%{name}"': '"%{name}"에 일정 %{count}개를 가져왔습니다',
+  'Parse warnings': '읽기 경고',
+  'Show details': '세부 정보 표시',
+  'Hide details': '세부 정보 숨기기',
+
+  // Sharing
+  'Share calendar: %{name}': '캘린더 공유: %{name}',
+  'Share with users': '사용자와 공유',
+  'User ID or Email': '사용자 ID 또는 이메일',
+  Read: '읽기',
+  'Read & Write': '읽기 및 쓰기',
+  Invite: '초대',
+  'Read only': '읽기 전용',
+  'Public links': '공개 및 초대 링크',
+  'Invite & Public links': '공개 및 초대 링크',
+  'Create link': '링크 만들기',
+  'Create invite link': '초대 링크 만들기',
+  'Read only link': '읽기 전용 링크',
+  'Read & Write link': '읽기 및 쓰기 링크',
+  'Web Invite Link': '웹 초대 링크',
+  'CalDAV Link': 'CalDAV 링크',
+  'Copy Web Invite': '웹 초대 복사',
+  'Copy CalDAV URL': 'CalDAV URL 복사',
+  'Copied!': '복사됨!',
+  Copy: '복사',
+  'No public links created yet': '아직 만든 공개 링크가 없습니다',
+  'Revoke link': '링크 취소',
+  'Shared via link': '링크로 공유됨',
+  'Join Shared Calendar': '공유 캘린더 참여',
+  'You have been invited to join the calendar "%{name}".': '"%{name}" 캘린더에 초대되었습니다.',
+  'Permission: %{perm}': '권한: %{perm}',
+  'Join Calendar': '캘린더 참여',
+  'You are already subscribed to this calendar.': '이미 이 캘린더를 구독하고 있습니다.',
+  'Joined calendar successfully': '캘린더에 참여했습니다',
+  'Leave calendar': '캘린더 나가기',
+
+  // Confirm Dialog
+  Confirm: '확인',
+
+  // Delete Calendar Confirmation
+  'Delete Calendar': '캘린더 삭제',
+  "Are you sure you want to delete '%{name}'? All events in this calendar will be permanently deleted.":
+    "'%{name}'을(를) 삭제하시겠습니까? 이 캘린더의 모든 일정이 영구적으로 삭제됩니다.",
+
+  // Shared calendars
+  Refresh: '새로 고침',
+  'Toggle sidebar': '사이드바 표시/숨기기',
+  'Shared by:': '공유한 사람:',
+  'Shared Calendar': '공유 캘린더',
+  Accepted: '수락됨',
+  Invited: '초대됨',
+  Left: '나감',
+  'Remove share': '공유 해제',
+  Leave: '나가기',
+  'Leave Calendar': '캘린더 나가기',
+  "Are you sure you want to leave '%{name}'? You will no longer have access to this calendar.":
+    "'%{name}'에서 나가시겠습니까? 더 이상 이 캘린더에 접근할 수 없습니다."
+}
+
+export default ko

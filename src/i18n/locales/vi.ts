@@ -1,0 +1,167 @@
+import type { Messages } from './en'
+
+const vi: Messages = {
+  // Navigation
+  Today: 'Hôm nay',
+  Month: 'Tháng',
+  Week: 'Tuần',
+  Day: 'Ngày',
+
+  // Sidebar
+  Calendars: 'Lịch',
+  'Create new calendar': 'Tạo lịch mới',
+  'Loading calendars...': 'Đang tải lịch...',
+  'No calendars found': 'Không tìm thấy lịch nào',
+  'Delete calendar': 'Xóa lịch',
+  'Share calendar': 'Chia sẻ lịch',
+  'Pending Invitations': 'Lời mời đang chờ',
+  'From:': 'Từ:',
+  Accept: 'Chấp nhận',
+  Decline: 'Từ chối',
+
+  // Event Dialog
+  'Edit Event': 'Sửa sự kiện',
+  'New Event': 'Sự kiện mới',
+  Title: 'Tiêu đề',
+  Calendar: 'Lịch',
+  'All day event': 'Cả ngày',
+  'Start Date': 'Ngày bắt đầu',
+  'Start Time': 'Giờ bắt đầu',
+  'End Date': 'Ngày kết thúc',
+  'End Time': 'Giờ kết thúc',
+  Location: 'Địa điểm',
+  Description: 'Mô tả',
+  'Event title': 'Tiêu đề sự kiện',
+  'Add location': 'Thêm địa điểm',
+  'Add description': 'Thêm mô tả',
+  Delete: 'Xóa',
+  Cancel: 'Hủy',
+  'Saving...': 'Đang lưu...',
+  Save: 'Lưu',
+
+  // Conflict Resolution
+  'This event was modified by another client. Choose how to resolve:':
+    'Sự kiện này đã bị một ứng dụng khác thay đổi. Chọn cách giải quyết:',
+  'Keep my changes': 'Giữ thay đổi của tôi',
+  'Use server version': 'Dùng phiên bản trên máy chủ',
+
+  // Calendar Dialog
+  'New Calendar': 'Lịch mới',
+  'Calendar Name': 'Tên lịch',
+  'Description (optional)': 'Mô tả (không bắt buộc)',
+  Color: 'Màu',
+  'Calendar description': 'Mô tả lịch',
+  'My Calendar': 'Lịch của tôi',
+  'Creating...': 'Đang tạo...',
+  Create: 'Tạo',
+
+  // Recurrence
+  'Edit Recurring Event': 'Sửa sự kiện lặp lại',
+  'This is a recurring event. What would you like to edit?':
+    'Đây là sự kiện lặp lại. Bạn muốn sửa gì?',
+  'This event only': 'Chỉ sự kiện này',
+  'All events in series': 'Tất cả sự kiện trong chuỗi',
+  'this occurrence': 'lần này',
+  'entire series': 'toàn bộ chuỗi',
+  Repeat: 'Lặp lại',
+  Every: 'Mỗi',
+  'day(s)': 'ngày',
+  'week(s)': 'tuần',
+  'month(s)': 'tháng',
+  'year(s)': 'năm',
+  Mon: 'T2',
+  Tue: 'T3',
+  Wed: 'T4',
+  Thu: 'T5',
+  Fri: 'T6',
+  Sat: 'T7',
+  Sun: 'CN',
+  Ends: 'Kết thúc',
+  Never: 'Không bao giờ',
+  After: 'Sau',
+  occurrences: 'lần',
+  On: 'Vào',
+  'Delete this event': 'Xóa sự kiện này',
+  'Export .ics': 'Xuất .ics',
+  'Download this occurrence as .ics': 'Tải lần này về dạng .ics',
+  'Download as .ics': 'Tải về dạng .ics',
+
+  // ICS Import
+  'Import Calendar': 'Nhập lịch',
+  'Import calendar': 'Nhập lịch',
+  'ICS File': 'Tệp ICS',
+  'Import mode': 'Chế độ nhập',
+  'Merge into existing calendar': 'Gộp vào lịch hiện có',
+  'Target calendar': 'Lịch đích',
+  'Select calendar': 'Chọn lịch',
+  'Enter calendar name': 'Nhập tên lịch',
+  Import: 'Nhập',
+  Close: 'Đóng',
+  'Reading file...': 'Đang đọc tệp...',
+  'Parsing events...': 'Đang phân tích sự kiện...',
+  'Analyzing for duplicates...': 'Đang kiểm tra trùng lặp...',
+  'Importing events...': 'Đang nhập sự kiện...',
+  Created: 'Đã tạo',
+  Updated: 'Đã cập nhật',
+  Skipped: 'Đã bỏ qua',
+  Failed: 'Thất bại',
+  'Imported %{count} events into "%{name}"': 'Đã nhập %{count} sự kiện vào "%{name}"',
+  'Parse warnings': 'Cảnh báo khi đọc',
+  'Show details': 'Hiện chi tiết',
+  'Hide details': 'Ẩn chi tiết',
+
+  // Sharing
+  'Share calendar: %{name}': 'Chia sẻ lịch: %{name}',
+  'Share with users': 'Chia sẻ với người dùng',
+  'User ID or Email': 'ID người dùng hoặc email',
+  Read: 'Đọc',
+  'Read & Write': 'Đọc & ghi',
+  Invite: 'Mời',
+  'Read only': 'Chỉ đọc',
+  'Public links': 'Liên kết công khai & lời mời',
+  'Invite & Public links': 'Liên kết công khai & lời mời',
+  'Create link': 'Tạo liên kết',
+  'Create invite link': 'Tạo liên kết mời',
+  'Read only link': 'Liên kết chỉ đọc',
+  'Read & Write link': 'Liên kết đọc & ghi',
+  'Web Invite Link': 'Liên kết mời trên web',
+  'CalDAV Link': 'Liên kết CalDAV',
+  'Copy Web Invite': 'Sao chép lời mời web',
+  'Copy CalDAV URL': 'Sao chép URL CalDAV',
+  'Copied!': 'Đã sao chép!',
+  Copy: 'Sao chép',
+  'No public links created yet': 'Chưa có liên kết công khai nào',
+  'Revoke link': 'Thu hồi liên kết',
+  'Shared via link': 'Được chia sẻ qua liên kết',
+  'Join Shared Calendar': 'Tham gia lịch được chia sẻ',
+  'You have been invited to join the calendar "%{name}".': 'Bạn được mời tham gia lịch "%{name}".',
+  'Permission: %{perm}': 'Quyền: %{perm}',
+  'Join Calendar': 'Tham gia lịch',
+  'You are already subscribed to this calendar.': 'Bạn đã đăng ký lịch này rồi.',
+  'Joined calendar successfully': 'Đã tham gia lịch',
+  'Leave calendar': 'Rời lịch',
+
+  // Confirm Dialog
+  Confirm: 'Xác nhận',
+
+  // Delete Calendar Confirmation
+  'Delete Calendar': 'Xóa lịch',
+  "Are you sure you want to delete '%{name}'? All events in this calendar will be permanently deleted.":
+    "Bạn có chắc muốn xóa '%{name}'? Tất cả sự kiện trong lịch này sẽ bị xóa vĩnh viễn.",
+
+  // Shared calendars
+  Refresh: 'Làm mới',
+  'Toggle sidebar': 'Hiện/ẩn thanh bên',
+  'Shared by:': 'Chia sẻ bởi:',
+  'Shared Calendar': 'Lịch được chia sẻ',
+  Accepted: 'Đã chấp nhận',
+  Invited: 'Đã mời',
+  Left: 'Đã rời',
+  'Remove share': 'Gỡ chia sẻ',
+  Leave: 'Rời',
+  'Leave Calendar': 'Rời lịch',
+  "Are you sure you want to leave '%{name}'? You will no longer have access to this calendar.":
+    "Bạn có chắc muốn rời '%{name}'? Bạn sẽ không còn quyền truy cập lịch này."
+}
+
+export default vi
